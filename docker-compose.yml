@@ -1,0 +1,19 @@
+version: '3'
+services:
+  frontend:
+    image: fernandovasori/image_clasifier-frontend:latest  # Frontend image
+    ports:
+      - "4200:4200"
+    networks:
+      - my-network
+
+  backend:
+    image: fernandovasori/image_clasifier-backend:latest   # Backend image
+    ports:
+      - "5000:5000"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
